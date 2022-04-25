@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6defac06-d837-4eab-bacf-aec25dcf1b93">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter_3.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="profesor_id" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[select*from cursos where profesor_id = $P{profesor_id}]]>
+	</queryString>
+	<field name="claveinstitucion" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="nombrecurso" class="java.lang.String"/>
+	<field name="numerohoras" class="java.lang.String"/>
+	<field name="status" class="java.lang.Integer"/>
+	<field name="tipocurso" class="java.lang.String"/>
+	<field name="profesor_id" class="java.lang.Long"/>
+	<columnHeader>
+		<band height="42">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="20" width="120" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="47134807-1671-4311-bc02-f3da09275b41">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre Curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="391" y="20" width="79" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="81fecf24-6ab0-45f0-80ad-2053a188cc53">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Clave Institucion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="130" y="20" width="80" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="967e1c51-526a-4071-8728-593795fc6b32">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="321" y="20" width="70" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="a0274660-939e-4165-811b-595f307b1937">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Numero Horas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="469" y="20" width="72" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="e061c9ab-399c-4d38-90c7-aae5f694902a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="20" width="111" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="461f2f8e-2610-4326-bbe1-dcefba1090ac">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="8"/>
+				</textElement>
+				<text><![CDATA[Tipo Curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="0" width="531" height="22" forecolor="#FFFFFF" backcolor="#1F4E79" uuid="b891bc76-597f-47e0-99d0-9e945a9c4e17">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="10"/>
+				</textElement>
+				<text><![CDATA[Cursos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="2" width="120" height="18" uuid="4f96988c-a175-4276-829e-0a435c519293">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombrecurso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="2" width="79" height="18" uuid="edd4c278-6281-46c6-b0dd-4ec4eb6a2988"/>
+				<textFieldExpression><![CDATA[$F{claveinstitucion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="2" width="80" height="18" uuid="b108bbc5-66ae-4494-98be-8496a1b19521"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="2" width="69" height="18" uuid="49c54ba3-1767-4068-bf9d-6947acca684f"/>
+				<textFieldExpression><![CDATA[$F{numerohoras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="2" width="71" height="18" uuid="983794a0-a8cb-4279-86c6-f6dd230041b3"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="2" width="109" height="18" uuid="6eb33cb9-0e2e-4733-aade-2d53485e29bd"/>
+				<textFieldExpression><![CDATA[$F{tipocurso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

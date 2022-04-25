@@ -1,0 +1,659 @@
+<html  xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<title>Dashboard CENIDET</title>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<style>
+.my-card {
+	position: absolute;
+	left: 40%;
+	top: -20px;
+	border-radius: 50%;
+}
+</style>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #f2f2f2;
+	font-family: "Roboto";
+	border-top: 30px solid #0d5ee0;
+}
+
+.wrap {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+	background: #fff;
+	box-shadow: 0px 0px 3px grey;
+}
+
+.contenedor-formulario {
+	width: 100%;
+	color: #f2f2f2;
+	padding: 50px;
+}
+
+.contenedor-formulario .formulario {
+	width: 100%;
+	margin: auto;
+}
+
+.contenedor-formulario .formulario .input-group {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"],
+	.contenedor-formulario .formulario .input-group input[type="email"],
+	.contenedor-formulario .formulario .input-group input[type="password"]
+	{
+	font-family: "Roboto";
+	font-size: 16px;
+	color: #303F9F;
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid #BBDEFB;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"]:focus,
+	.contenedor-formulario .formulario .input-group input[type="text"]:active,
+	.contenedor-formulario .formulario .input-group input[type="email"]:focus,
+	.contenedor-formulario .formulario .input-group input[type="email"]:active,
+	.contenedor-formulario .formulario .input-group input[type="password"]:focus,
+	.contenedor-formulario .formulario .input-group input[type="password"]:active
+	{
+	outline: none;
+	border-bottom: 2px solid #303F9F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"].error,
+	.contenedor-formulario .formulario .input-group input[type="email"].error,
+	.contenedor-formulario .formulario .input-group input[type="password"].error
+	{
+	border-bottom: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"].error+label,
+	.contenedor-formulario .formulario .input-group input[type="email"].error+label,
+	.contenedor-formulario .formulario .input-group input[type="password"].error+label
+	{
+	color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group label {
+	color: #303F9F;
+}
+
+.contenedor-formulario .formulario .input-group label.label {
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	margin-left: 15px;
+	font-size: 16px;
+	line-height: 16px;
+	position: absolute;
+	top: 16px;
+	left: 0;
+}
+
+.contenedor-formulario .formulario .input-group label.label.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: #B6B6B6;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label,
+	.contenedor-formulario .formulario .input-group.radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: #303F9F;
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label:hover,
+	.contenedor-formulario .formulario .input-group.radio label:hover {
+	background: #bbdefb;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label:before,
+	.contenedor-formulario .formulario .input-group.radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid #303F9F;
+}
+
+.contenedor-formulario .formulario .input-group.error label {
+	color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group.error label:hover {
+	background: rgba(211, 47, 47, 0.2);
+}
+
+.contenedor-formulario .formulario .input-group.error label:before {
+	border: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]
+	{
+	display: none;
+}
+
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked+label:before
+	{
+	display: none;
+}
+
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked+label
+	{
+	padding: 5px 15px;
+	background: #303F9F;
+	border-radius: 2px;
+	color: #f2f2f2;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label:before {
+	border-radius: 3px;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"]
+	{
+	display: none;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"]:checked+label:before
+	{
+	display: none;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox input[type="checkbox"]:checked+label
+	{
+	background: #303F9F;
+	color: #f2f2f2;
+	padding: 5px 15px;
+}
+
+.contenedor-formulario .formulario input[type="submit"] {
+	background: #303F9F;
+	border-radius: 1px;
+	border: 2px solid #f2f2f2;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Roboto";
+	font-size: 16px;
+	padding: 15px;
+	width: 100%;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.contenedor-formulario .formulario input[type="submit"]:hover {
+	background: #1976D2;
+}
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+<style>
+input {
+	margin: 40px 25px;
+	width: 200px;
+	display: block;
+	border: none;
+	padding: 10px 0;
+	border-bottom: solid 1px #1abc9c;
+	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%,
+		#1abc9c 4%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%,
+		#1abc9c 4%);
+	background-position: -200px 0;
+	background-size: 200px 100%;
+	background-repeat: no-repeat;
+	color: #0e6252;
+}
+
+input:focus, input:valid {
+	box-shadow: none;
+	outline: none;
+	background-position: 0 0;
+}
+
+input::-webkit-input-placeholder {
+	font-family: 'roboto', sans-serif;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder
+	{
+	color: #1abc9c;
+	font-size: 11px;
+	-webkit-transform: translateY(-20px);
+	transform: translateY(-20px);
+	visibility: visible !important;
+}
+</style>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+@import
+	url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+.fa-2x {
+	font-size: 2em;
+}
+
+.fa {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+.main-menu:hover, nav.main-menu.expanded {
+	width: 250px;
+	overflow: visible;
+}
+
+.main-menu {
+	background: #0d5ee0;
+	border-right: 1px solid #e5e5e5;
+	position: absolute;
+	top: -165;
+	bottom: 0;
+	height: 95%;
+	left: 0;
+	width: 60px;
+	overflow: hidden;
+	-webkit-transition: width .05s linear;
+	transition: width .05s linear;
+	-webkit-transform: translateZ(0) scale(1, 1);
+	z-index: 1000;
+}
+
+.main-menu>ul {
+	margin: 7px 0;
+}
+
+.main-menu li {
+	position: relative;
+	display: block;
+	width: 250px;
+}
+
+.main-menu li>a {
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #fcfcfc;
+	font-family: arial;
+	font-size: 14px;
+	text-decoration: none;
+	-webkit-transform: translateZ(0) scale(1, 1);
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+.main-menu .nav-icon {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+}
+
+.main-menu .nav-text {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	width: 190px;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.no-touch .scrollable.hover {
+	overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+	overflow-y: auto;
+	overflow: visible;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+nav {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+nav ul, nav li {
+	outline: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.main-menu li:hover>a, nav.main-menu li.active>a, .dropdown-menu>li>a:hover,
+	.dropdown-menu>li>a:focus, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover,
+	.dropdown-menu>.active>a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+	.dashboard-page nav.dashboard-menu ul li.active a {
+	color: #fff;
+	background-color: #5fa2db;
+}
+
+.area {
+	float: left;
+	background: #e2e2e2;
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'Titillium Web';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Titillium WebLight'), local('TitilliumWeb-Light'),
+		url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
+		format('woff');
+}
+</style>
+
+<style>
+.panel {
+	padding: 25px;
+	background: white;
+	margin-left: 4%;
+	width: 90%;
+}
+
+.panel_titulo {
+	text-align: center;
+}
+
+.panel_titulo p {
+	outline: 5px double rgb(168, 168, 250);
+	outline-offset: 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	padding: 5px;
+	letter-spacing: 1.2px;
+	word-spacing: 1.2px;
+	font-size: 100%;
+	font-weight: 700;
+	color: #353535;
+}
+
+.subpanel_titulo p {
+	border: 4px solid rgb(120, 120, 200);
+	border-radius: 5px;
+	text-align: center;
+	width: 10%;
+}
+
+.subpanel {
+	margin-top: 4%;
+	border: 2px solid rgb(120, 120, 240);
+	border-radius: 15px;
+}
+
+.caja_horizontal {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: normal;
+}
+
+.caja {
+	background-color: rgb(240, 240, 240);
+	margin: 2%;
+	width: 50%;
+}
+
+.caja_titulo {
+	padding-top: 7px;
+	text-align: center;
+}
+
+.caja_valor {
+	text-align: center;
+	color: rgb(60, 240, 60);
+	font-size: 200%;
+}
+
+.caja_subtitulo {
+	
+}
+
+.panel {
+	border: 2px solid rgb(150, 150, 230);
+	border-radius: 15px;
+}
+</style>
+
+
+<body>
+	<div align="left" style="padding: 25px 0px 15px 250px">
+		<img src="img/CENIDET.png" height="110" width="300"
+			style="float: left">
+	</div>
+	<div align="left" style="padding: 0px 0px 15px 1000px">
+		<img src="img/Logo TecNM Horizontal.png" height="110" width="300">
+	</div>
+	<div class="col-12">
+
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row w-100">
+					<div class="col-md-4">
+						<div class="card border-info mx-sm-1 p-3"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-info text-center mt-3">
+							<i class="fas fa-user-graduate" style='font-size:40px'></i>
+								<h4>Alumnos</h4>
+							</div>
+							<div class="text-info text-center mt-2">
+								<h1 th:text="${num_alumno}"></h1>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="card border-info mx-sm-1 p-3"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-info text-center mt-3">
+							<i class='fas fa-chalkboard-teacher' style='font-size:40px'></i>
+								<h4>Profesores</h4>
+							</div>
+							<div class="text-info text-center mt-2">
+								<h1 th:text="${num_profesor}"></h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card border-success mx-sm-1 p-4"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-success text-center mt-3">
+							<i class='fas fa-book-open' style='font-size:40px'></i>
+								<h4>Publicaciones</h4>
+							</div>
+							<div class="text-success text-center mt-2">
+								<h1 th:text="${num_publicaciones}"></h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card border-success mx-sm-1 p-4"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-success text-center mt-3">
+							<i class='fas fa-chalkboard' style='font-size:40px'></i>
+								<h4>Cursos</h4>
+							</div>
+							<div class="text-success text-center mt-2">
+								<h1 th:text="${num_cursos}"></h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card border-danger mx-sm-1 p-4"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-danger text-center mt-3">
+							<i class='fas fa-users' style='font-size:40px'></i>
+								<h4>Conferencias</h4>
+							</div>
+							<div class="text-danger text-center mt-2">
+								<h1 th:text="${num_conferencias}"></h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card border-danger mx-sm-1 p-4"
+							style="height: 200px; width: 300px; margin: 10px">
+							<div class="text-danger text-center mt-3">
+							<i class='fas fa-book-reader' style='font-size:40px'></i>
+								<h4>Tesis</h4>
+							</div>
+							<div class="text-danger text-center mt-2">
+								<h1 th:text="${total_tesis}"></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				
+
+
+	<div class="area"></div>
+	<nav class="main-menu">
+		<ul>
+			<li><br> <a> <i class="fa fa-user fa-2x"></i> <span>Bienvenido:
+				</span> <span sec:authentication="principal.username"></span>
+			</a> <br></li>
+			
+			<li><a th:href="@{/}"> <i class="fa fa-home fa-2x"></i> <span
+					class="nav-text"> Inicio </span>
+			</a></li>
+			
+			<li class="has-subnav"><a th:href="@{/Alumno}"> <i
+					class="fa fa-laptop fa-2x"></i> <span class="nav-text">
+						Alumno </span>
+			</a></li>
+
+			<li class="has-subnav"><a th:href="@{/Profesor}"> <i
+					class="fa fa-list fa-2x"></i> <span class="nav-text">
+						Profesores </span>
+			</a></li>
+			<li><a th:href="@{/Departamento}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						Departamentos </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/Linea}"> <i
+					class="fa fa-folder-open fa-2x"></i> <span class="nav-text">
+						Lineas </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/Redes}"> <i
+					class="fa fa-folder-open fa-2x"></i> <span class="nav-text">
+						Redes </span>
+			</a></li>
+			<li><a th:href="@{/Tesis}"> <i class="fa fa-font fa-2x"></i>
+					<span class="nav-text"> Tesis </span>
+			</a></li>
+			<li><a th:href="@{/Publicaciones}"> <i
+					class="fa fa-table fa-2x"></i> <span class="nav-text">
+						Publicaciones </span>
+			</a></li>
+			<li><a th:href="@{/Asistencia_conferencias}"> <i
+					class="fa fa-table fa-2x"></i> <span class="nav-text">
+						Conferencias </span>
+			</a></li>
+			<li><a th:href="@{/Cursos}"> <i class="fa fa-table fa-2x"></i>
+					<span class="nav-text"> Cursos </span>
+			</a></li>
+			
+			<li><a th:href="@{/Estadisticas}"> <i class="fa fa-table fa-2x"></i>
+					<span class="nav-text"> Estadisticas </span>
+			</a></li>
+			
+		</ul>
+
+		<ul class="logout">
+			<li><a th:href="@{/logout}"> <i
+					class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+						Cerrar sesion </span>
+			</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
